@@ -2,9 +2,7 @@
 Clients 
 -->
 <section class="our_client">
-	<hr class="soften"/>
-	<h4 class="title cntr"><span class="text">Manufactures</span></h4>
-	<hr class="soften"/>
+	
 	<div class="row">
 		<div class="span2">
 			<a href="#"><img alt="" src="assets/img/1.png"></a>
@@ -33,35 +31,36 @@ Footer
 <footer class="footer">
 <div class="row-fluid">
 <div class="span2">
-<h5>Your Account</h5>
-<a href="#">YOUR ACCOUNT</a><br>
-<a href="#">PERSONAL INFORMATION</a><br>
-<a href="#">ADDRESSES</a><br>
-<a href="#">DISCOUNT</a><br>
-<a href="#">ORDER HISTORY</a><br>
+<h5>Sitemiz Hakkında</h5>
+<a href="#">Hakkımızda</a><br>
+<a href="#">İnsan Kaynakları</a><br>
+<a href="#">Adres</a><br>
+<a href="iletisim.php">İletişim</a><br>
+
  </div>
 <div class="span2">
-<h5>Iinformation</h5>
-<a href="contact.html">CONTACT</a><br>
-<a href="#">SITEMAP</a><br>
-<a href="#">LEGAL NOTICE</a><br>
-<a href="#">TERMS AND CONDITIONS</a><br>
-<a href="#">ABOUT US</a><br>
+<h5>İşlem Rehberi</h5>
+<a href="#">Nasıl Ürün Alırım?</a><br>
+<a href="#">Ödeme Seçenekleri</a><br>
+<a href="#">Alış Sonrası İşlemler</a><br>
+<a href="#">Satıcı Bilgi Merkezi</a><br>
+
  </div>
+
 <div class="span2">
-<h5>Our Offer</h5>
-<a href="#">NEW PRODUCTS</a> <br>
-<a href="#">TOP SELLERS</a><br>
-<a href="#">SPECIALS</a><br>
-<a href="#">MANUFACTURERS</a><br>
-<a href="#">SUPPLIERS</a> <br/>
+<h5>Müşter</h5>
+<a href="kayit.php">Üye Ol</a> <br>
+<a href="#">Yeni Üye Rehberi</a><br>
+<a href="#">Ödeme Seçenekleri</a><br>
+<a href="#">İptal, İade, Değişim</a><br>
+<a href="#">Kullanıcı Güvenliği</a> <br/>
+<a href="#">İşlem Rehberi</a><br>
+<a href="#">Yardım</a> <br/>
  </div>
+
  <div class="span6">
-<h5>The standard chunk of Lorem</h5>
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for
- those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et 
- Malorum" by Cicero are also reproduced in their exact original form, 
-accompanied by English versions from the 1914 translation by H. Rackham.
+<h5>Türkiye'nin En Büyük Sanal Gerceklik Tabanli Gözlük Deneme Sitesi </h5>
+Günün büyük bölümünü internet başında geçiren günümüz insanları için online alışveriş kaçınılmaz bir ihtiyaç denilebilir. Bu noktada işleri kolaylaştırıcı bazı hizmetlere ihtiyaç duyulması da kaçınılmaz oluyor.Kamera sayesinde anında denenmesini, her bir ürün sayfasında yer alan deneme butonuna tıklanarak hiç vakit kaybetmeden ve zaman kısıtlaması olmadan, saat kaç olursa olsun sipariş verebilme imkanı sağlayacak, güvenli  ve kaliteli şekilde gözlük alışverişini gerçekleştirmeye imkan sunulmaktadır.
  </div>
  </div>
 </footer>

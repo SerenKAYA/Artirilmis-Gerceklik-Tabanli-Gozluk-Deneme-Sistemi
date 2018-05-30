@@ -26,12 +26,14 @@ Navigation Bar Section
 			<form  class="navbar-search pull-left">
 			  <input type="text" placeholder="Search" class="search-query span2">
 			</form>
+
+			<?php if(!isset($_SESSION['uye_email'])){ ?>
 			<ul class="nav pull-right">
 			<li class="dropdown">
 				<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> Oturum Aç <b class="caret"></b></a>
 				<div class="dropdown-menu">
 
-				<form action="nedmin/netting/islem.php" method="POST" class="form-horizontal loginFrm">
+				<form action="islem.php" method="POST"  class="form-horizontal loginFrm">
 				  <div class="control-group">
 					<input type="text" class="span2" id="inputEmail" placeholder="Email">
 				  </div>
@@ -50,6 +52,20 @@ Navigation Bar Section
 				</div>
 			</li>
 			</ul>
+
+			<?php }
+			else { ?>				
+			<ul class="nav pull-right">
+			<li class="">
+				<a href=""><?php echo $_SESSION['uye_adi']; echo " ".$_SESSION['uye_soyadi']; ?></a>
+			</li>
+			<li class="">
+				<a href="logout.php">Çıkış Yap</a>
+			</li>
+			</ul>
+
+			<?php } ?>
+			<!-- /Oturum Aç -->
 		  </div>
 		</div>
 	  </div>
@@ -63,19 +79,22 @@ Body Section
 	<hr class="soften"/>	
 	<div class="row-fluid">
 		<div class="span8 relative">
-		<iframe style="width:100%; height:350px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.co.uk/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Newbury+Street,+Boston,+MA,+United+States&amp;aq=1&amp;oq=NewBoston,+MA,+United+States&amp;sll=42.347238,-71.084011&amp;sspn=0.014099,0.033023&amp;ie=UTF8&amp;hq=Newbury+Street,+Boston,+MA,+United+States&amp;t=m&amp;ll=42.348994,-71.088248&amp;spn=0.001388,0.006276&amp;z=18&amp;iwloc=A&amp;output=embed"></iframe>
+
+
+
+		<iframe style="width:100%; height:350px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=süleyman demirel üniversitesi batı&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
 
 		<div class="absoluteBlk">
 		<div class="well wellsmall">
-		<h4>Contact Details</h4>
+		<h4>İletişim Bilgileri</h4>
 		<h5>
-			2601 Mission St.<br/>
-			San Francisco, CA 94110<br/><br/>
+			Süleyman Demirel Üniveritesi Batı Kampüsü<br/>
+			E-9 Kat:1 32260 Çünür/Isparta<br/><br/>
 			 
-			info@mysite.com<br/>
-			﻿Tel 123-456-6780<br/>
-			Fax 123-456-5679<br/>
-			web:wwwmysitedomain.com
+			bilgisayarmuh@sdu.edu.tr<br/>
+			﻿Tel : +90 246 211 13 82<br/>
+			Fax : +90 246 237 08 59<br/>
+			http://muhendislik.sdu.edu.tr
 		</h5>
 		</div>
 		</div>
@@ -85,7 +104,7 @@ Body Section
 		<h4>E-Posta Gönder</h4>
 
 
-		<form action="islem.php" method="POST" class="form-horizontal">
+		<form  method="POST" class="form-horizontal">
         <fieldset>
           <div class="control-group">
            

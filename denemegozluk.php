@@ -1,6 +1,10 @@
 
 <?php 
 include "header.php";
+
+include 'baglan.php';
+session_start(); 
+
  ?>
 <div class="navbar">
 	  <div class="navbar-inner">
@@ -21,31 +25,47 @@ include "header.php";
 			  <input type="text" placeholder="Search" class="search-query span2">
 			</form>
 			
-			<ul class="nav pull-right">
-			<li class="dropdown">
-				<a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> Oturum Aç <b class="caret"></b></a>
-				<div class="dropdown-menu">
-				<form class="form-horizontal loginFrm">
-				  <div class="control-group">
-					<input type="text" class="span2" id="inputEmail" placeholder="Email">
-				  </div>
-				  <div class="control-group">
-					<input type="password" class="span2" id="inputPassword" placeholder="Password">
-				  </div>
-				  <div class="control-group">
-					<label class="checkbox">
-					<input type="checkbox"> Hatırla
-					</label>
-					<button type="submit" class="shopBtn btn-block"> Oturum Aç</button>
-				  </div>
-				</form>
-				</div>
-			</li>
-			</ul>
-		  </div>
-		</div>
-	  </div>
-	</div>
+			<?php if(!isset($_SESSION['uye_email'])){ ?>
+            <ul class="nav pull-right">
+            <li class="dropdown">
+                <a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> Oturum Aç <b class="caret"></b></a>
+                <div class="dropdown-menu"> 
+
+                <form action="islem.php" method="POST" class="form-horizontal loginFrm">
+                  <div class="control-group">
+                    <input type="text" class="span2" name="uye_email" id="inputEmail" placeholder="Email">
+                  </div>
+                  <div class="control-group">
+                    <input type="password" class="span2" name="uye_sifre" id="inputPassword" placeholder="Password">
+                  </div>
+                  <div class="control-group">
+                    <label class="checkbox">
+                    <input type="checkbox"> Hatırla
+                    </label>
+                    <button type="submit" name="oturum" class="shopBtn btn-block"> Oturum Aç</button>
+                  </div>
+                </form>
+
+                </div>
+            </li>
+            </ul>
+            <?php }
+            else { ?>               
+            <ul class="nav pull-right">
+            <li class="">
+                <a href=""><?php echo $_SESSION['uye_adi']; echo " ".$_SESSION['uye_soyadi']; ?></a>
+            </li>
+            <li class="">
+                <a href="logout.php">Çıkış Yap</a>
+            </li>
+            </ul>
+
+            <?php } ?>
+            <!-- /Oturum Aç -->
+          </div>
+        </div>
+      </div>
+    </div>
 	<script type="text/javascript" src="assets/clmtrackr-gh-pages/src/clm.js"></script>
 
 	<!doctype html>
@@ -95,6 +115,17 @@ include "header.php";
         </style>
     </head>
     <body>
+
+        <?php $gozluk_id = $_GET['gozluk'];
+
+
+            $query =" select * from gozlukler where gozluk_id= $gozluk_id";  
+            $result = mysqli_query($baglan, $query);  
+            $degerler = mysqli_fetch_array($result);                          
+            
+
+         ?>
+
         <!-- jquery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <!-- three.js r54 -->
@@ -386,12 +417,17 @@ include "header.php";
             var tryOn = null;
             $(window).load(function () {
                 $('#start').hide();
-
+                var sol = <?php echo json_encode($degerler['left_url']); ?>;
+                var sag = <?php echo json_encode($degerler['right_url']); ?>;
+                var onu = <?php echo json_encode($degerler['front_url']); ?>;
+                console.log("sol", sol);
+                console.log("sag", sag);
+                console.log("on", onu);
                 var object = {
                     outside: {
-                        left: 'glasses/left-h.png',
-                        right: 'glasses/right-h.png',
-                        front: 'glasses/front-h.png'
+                        left: sol +".png",
+                        right: sag+".png",
+                        front: onu+".png"
                     }
                 };
 
